@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@sorint/ng-library": [
+        "dist/sorint/ng-library"
+      ],
+      "@sorint/ng-library/*": [
+        "dist/sorint/ng-library/*"
+      ]
+    }
   }
 }

@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "@sorint/ng-library": {
+      "root": "projects/sorint/ng-library",
+      "sourceRoot": "projects/sorint/ng-library/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "targets": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sorint/ng-library/tsconfig.lib.json",
+            "project": "projects/sorint/ng-library/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sorint/ng-library/src/test.ts",
+            "tsConfig": "projects/sorint/ng-library/tsconfig.spec.json",
+            "karmaConfig": "projects/sorint/ng-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sorint/ng-library/tsconfig.lib.json",
+              "projects/sorint/ng-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "libs-workspace"
